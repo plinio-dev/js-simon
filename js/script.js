@@ -1,7 +1,9 @@
 // Un alert() espone 5 numeri generati casualmente.
 // Da li parte un timer di 30 secondi.
 // Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
-// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+  // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+
+
 $(function(){
 
   function numeriRand(min, max) {
@@ -24,21 +26,20 @@ $(function(){
   var numeriUtente;
   numeriValidi = [];
 
+  // setto un orologio su 3 secondi
   var clock = setTimeout(function () {
     clearTimeout(clock);
+    // chiedo all'utente di inserire 5 numeri, se sono contenuti nell'array dei numeri generati, li inserisco in un array con soli numeri validi
     for (var j = 0; j < 5; j++) {
       numeriUtente = parseInt(prompt("Inserisci i numeri che hai visto prima"));
       if (arrayComp.includes(numeriUtente) == true) {
         numeriValidi.push(numeriUtente);
-        console.log(numeriValidi);
       }
-
     }
 
-
-    // if ( arrayUtente.includes(numeriUtente) == false) {
+     // il software dice quanti e quali dei numeri da indovinare sono stati individuati.
       console.log("hai ricordato " + numeriValidi.length + " numeri validi");
-
+      console.log("I numeri validi sono " + numeriValidi);
 
   }, 3000);
 
