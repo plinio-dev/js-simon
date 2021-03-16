@@ -9,7 +9,8 @@ $(function(){
   }
 
   var arrayComp = [];
-  var arrayUtente = [];
+
+
   // genero i 5 numeri random
   for (var i = 0; i < 5; i++) {
     var numeriRandom = numeriRand(1,10);
@@ -20,17 +21,25 @@ $(function(){
   alert(arrayComp);
   console.log(arrayComp);
 
+  var numeriUtente;
+  numeriValidi = [];
 
-  var clock = setInterval(function () {
-    clearInterval(clock);
-    for (var i = 0; i < 5; i++) {
-      var numeriUtente = parseInt(prompt("Inserisci i numeri che hai visto prima"));
-      arrayUtente.push(numeriUtente);
+  var clock = setTimeout(function () {
+    clearTimeout(clock);
+    for (var j = 0; j < 5; j++) {
+      numeriUtente = parseInt(prompt("Inserisci i numeri che hai visto prima"));
+      if (arrayComp.includes(numeriUtente) == true) {
+        numeriValidi.push(numeriUtente);
+        console.log(numeriValidi);
+      }
+
     }
+
+
+    // if ( arrayUtente.includes(numeriUtente) == false) {
+      console.log("hai ricordato " + numeriValidi.length + " numeri validi");
+
+
   }, 3000);
-
-
-
-  console.log(arrayUtente);
 
 });
