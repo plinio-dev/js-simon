@@ -39,7 +39,7 @@ $(function(){
 
      // il software dice quanti e quali dei numeri da indovinare sono stati individuati.
       console.log("hai ricordato " + numeriValidi.length + " numeri validi");
-      console.log("I numeri validi sono " + numeriValidi);
+      console.log("I numeri validi che hai inserito sono " + numeriValidi);
 
   }, 3000);
 
